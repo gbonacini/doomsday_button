@@ -1,9 +1,10 @@
 Description:
 ============
 
-This an HID device able to emulate mouse and keyboard, in intentions it's intended to be used to launch tasks in Hollywood fashion, action movie style, emulating devices like Matrix EMP activation console, DEFCON 1 launch devices, etc.
+This is an HID device able to emulate mouse and keyboard, in my intentions it's intended to be used to launch tasks in Hollywood fashion, action movie style, emulating devices like Matrix EMP activation console, DEFCON 1 launch devices, etc.
+One of the default payloads launch the 'doomsday.sh' script in the current directory, if the focus is on a terminal.
 
-So every task can became a mission ! :-)
+Every task can became a mission ! :-)
 
 ![alt text](screenshoots/IMG-8769.jpg "the switch - 1")
 ![alt text](screenshoots/IMG-8770.jpg "the switch - 2")
@@ -15,7 +16,7 @@ Possible uses:
 * Serious:<br>
 ** Test / Laboratory experiments / Dangerous procedures,  where you need protection against involuntary activation of software or hardware;
 
-* Not Serious :-)<br>
+* Not So Serious :-)<br>
 ** Jokes;<br>
 ** Trolling super anxious / super apprehensive colleagues (I know , I'm a bad person :-) );<br>
 ** Your fantasy is the limit here.<br>
@@ -25,7 +26,7 @@ FEATURES:
 =========
 
 - It can emulate keyboards and mouse interaction;<br>
-- It support a safe ( the switch  with the key you an see in the photos ) and a trigger button that launch the selected payload if the safe is disabled;<br>
+- It supports a safe ( the switch with the key you an see in the photos ) and a trigger button that launch the selected payload, if the safe is disabled;<br>
 - A dip switch bank (used as a 4 bits number index) permits to select up to 16 different payloads.<br>
 
 
