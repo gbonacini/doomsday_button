@@ -12,32 +12,32 @@ So every task can became a mission ! :-)
 Possible uses:
 ==============
 
-* Serious:
+* Serious:<br>
 ** Test / Laboratory esperiments / Dangerous procedures,  where you need protection against involontary activation of software or hardware;
 
-* Not Serious :-)
-** Jokes;
-** Trolling iper anxious / iper apprehensive collegues (I know , I'm a bad person :-) );
-** Your fantasy is the limit here.
+* Not Serious :-)<br>
+** Jokes;<br>
+** Trolling iper anxious / iper apprehensive collegues (I know , I'm a bad person :-) );<br>
+** Your fantasy is the limit here.<br>
 
 
 FEATURES:
 =========
 
-- It can emulate keyboards and mouse interaction;
-- It support a safe switch ( the one with the key in the photos ) and a trigger button that launch the selected payload;
-- A dip switch bank (used as a 4 bits number ) permits to select up to 16 different payloads.
+- It can emulate keyboards and mouse interaction;<br>
+- It support a safe switch ( the one with the key in the photos ) and a trigger button that launch the selected payload;<br>
+- A dip switch bank (used as a 4 bits number ) permits to select up to 16 different payloads.<br>
 
 
 Prerequisites:
 ==============
 
-- Teensy++ 2.0;
-- Key Switch;
-- Button;
-- DIP switch, 4 switches array;
-- 220 - 360 OHMs resistor;
-- LED, panel mountable; 
-- box;
-- USB Cable (mini);
-- Decorative sticks (Optional).
+- Teensy++ 2.0;<br>
+- Key Switch;<br>
+- Button;<br>
+- DIP switch, 4 switches array;<br>
+- 220 - 360 OHMs resistor;<br>
+- LED, panel mountable; <br>
+- box;<br>
+- USB Cable (mini);<br>
+- Decorative sticks (Optional).<br>
