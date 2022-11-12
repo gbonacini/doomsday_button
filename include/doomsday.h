@@ -1,10 +1,30 @@
+// -----------------------------------------------------------------
+// Doomsday - A USB HID "defcon" button
+// Copyright (C) 2022  Gabriele Bonacini
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// You should have received a copy of the GNU General Public License
+// along with this program; if not, write to the Free Software Foundation,
+// Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
+// -----------------------------------------------------------------
+
+
 #pragma once
 
 #include <Arduino.h>
 #include <stdint.h>
 
 namespace doomsday{
+
     using Payload = void (*)(void);
+
     class Doomsday{
         private:
             // C6 - 16 : LED
@@ -24,8 +44,9 @@ namespace doomsday{
             const unsigned long GRACETIME   { 10000UL }, // I use a special button, you probably 
                                                          // want less grace time
                                 LEDTIMING   { 500UL };
-            const int INFO    { 0 },
-                      EXEC    { 1 };
+
+            const int           INFO        { 0 },
+                                EXEC        { 1 };
     
             unsigned long event             { 0UL },
                           ledLastFlash      { 0UL };
@@ -52,60 +73,60 @@ namespace doomsday{
 
     Doomsday::Doomsday(void) noexcept
       : payload{ 
-         { [](void){ Doomsday::printInfo("Selected Payload: 0 -> return"); },
-           [](void){ Serial.println("Executing Payload: 0 -> return"); 
+         { [](){ Doomsday::printInfo("Selected Payload: 0 -> return"); },
+           [](){ Serial.println("Executing Payload: 0 -> return"); 
                      Keyboard.press(KEY_ENTER);
                      Keyboard.release(KEY_ENTER); }
          },
-         { [](void){ Doomsday::printInfo("Selected Payload: 1 -> left click"); },
-           [](void){ Serial.println("Executing Payload: 1 -> left click"); 
+         { [](){ Doomsday::printInfo("Selected Payload: 1 -> left click"); },
+           [](){ Serial.println("Executing Payload: 1 -> left click"); 
                      Mouse.set_buttons(1, 0, 0);
                      Mouse.click();
             }
          },
-         { [](void){ Doomsday::printInfo("Selected Payload: 2 -> doomsday.sh"); },
-           [](void){ Serial.println("Executing Payload: 2 -> doomsday.sh"); 
+         { [](){ Doomsday::printInfo("Selected Payload: 2 -> doomsday.sh"); },
+           [](){ Serial.println("Executing Payload: 2 -> doomsday.sh"); 
                      Keyboard.println("./doomsday.sh");          
             }
          },
-         { [](void){ Doomsday::printInfo("Selected Payload: 3"); },
-           [](void){ Serial.println("Not assigned!"); }
+         { [](){ Doomsday::printInfo("Selected Payload: 3"); },
+           [](){ Serial.println("Not assigned!"); }
          },
-         { [](void){ Doomsday::printInfo("Selected Payload: 4"); },
-           [](void){ Serial.println("Not assigned!"); }
+         { [](){ Doomsday::printInfo("Selected Payload: 4"); },
+           [](){ Serial.println("Not assigned!"); }
          },
-         { [](void){ Doomsday::printInfo("Selected Payload: 5"); },
-           [](void){ Serial.println("Not assigned!"); }
+         { [](){ Doomsday::printInfo("Selected Payload: 5"); },
+           [](){ Serial.println("Not assigned!"); }
          },
-         { [](void){ Doomsday::printInfo("Selected Payload: 6"); },
-           [](void){ Serial.println("Not assigned!"); }
+         { [](){ Doomsday::printInfo("Selected Payload: 6"); },
+           [](){ Serial.println("Not assigned!"); }
          },
-         { [](void){ Doomsday::printInfo("Selected Payload: 7"); },
-           [](void){ Serial.println("Not assigned!"); }
+         { [](){ Doomsday::printInfo("Selected Payload: 7"); },
+           [](){ Serial.println("Not assigned!"); }
          },
-         { [](void){ Doomsday::printInfo("Selected Payload: 8"); },
-           [](void){ Serial.println("Not assigned!"); }
+         { [](){ Doomsday::printInfo("Selected Payload: 8"); },
+           [](){ Serial.println("Not assigned!"); }
          },
-         { [](void){ Doomsday::printInfo("Selected Payload: 9"); },
-           [](void){ Serial.println("Not assigned!"); }
+         { [](){ Doomsday::printInfo("Selected Payload: 9"); },
+           [](){ Serial.println("Not assigned!"); }
          },
-         { [](void){ Doomsday::printInfo("Selected Payload: 10"); },
-           [](void){ Serial.println("Not assigned!"); }
+         { [](){ Doomsday::printInfo("Selected Payload: 10"); },
+           [](){ Serial.println("Not assigned!"); }
          },
-         { [](void){ Doomsday::printInfo("Selected Payload: 11"); },
-           [](void){ Serial.println("Not assigned!"); }
+         { [](){ Doomsday::printInfo("Selected Payload: 11"); },
+           [](){ Serial.println("Not assigned!"); }
          },
-         { [](void){ Doomsday::printInfo("Selected Payload: 12"); },
-           [](void){ Serial.println("Not assigned!"); }
+         { [](){ Doomsday::printInfo("Selected Payload: 12"); },
+           [](){ Serial.println("Not assigned!"); }
          },
-         { [](void){ Doomsday::printInfo("Selected Payload: 13"); },
-           [](void){ Serial.println("Not assigned!"); }
+         { [](){ Doomsday::printInfo("Selected Payload: 13"); },
+           [](){ Serial.println("Not assigned!"); }
          },
-         { [](void){ Doomsday::printInfo("Selected Payload: 14"); },
-           [](void){ Serial.println("Not assigned!"); }
+         { [](){ Doomsday::printInfo("Selected Payload: 14"); },
+           [](){ Serial.println("Not assigned!"); }
          },
-         { [](void){ Doomsday::printInfo("Selected Payload: 15"); },
-           [](void){ Serial.println("Not assigned!"); }
+         { [](){ Doomsday::printInfo("Selected Payload: 15"); },
+           [](){ Serial.println("Not assigned!"); }
          }
       }
     {
@@ -136,7 +157,7 @@ namespace doomsday{
     bool Doomsday::checkKey(void) noexcept{
         if(digitalRead(KEY) == LOW ){
            Doomsday::infoPrinted = getPayload();
-           payload[infoPrinted][INFO]();
+           payload[Doomsday::infoPrinted][INFO]();
            if( event == 0UL || millis() - event >= GRACETIME ){
                 digitalWrite(STATUS_LED, HIGH); 
            } else {
